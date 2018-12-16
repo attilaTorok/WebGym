@@ -50,7 +50,7 @@ public class ProductController {
 
     @PostMapping("product")
     public String saveOrUpdate(@ModelAttribute ProductCommand command){
-        ProductCommand savedCommand = productService.saveRecipeCommand(command);
+        ProductCommand savedCommand = productService.saveProductCommand(command);
 
         log.debug("Save the product");
 

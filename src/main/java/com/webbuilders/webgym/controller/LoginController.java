@@ -51,14 +51,15 @@ public class LoginController {
         try {
             user = userService.findByEmail(requestParams.get("email"));
         } catch (RuntimeException re) {
-            modelAndView.setViewName("login");
+            bindingResult.reject("email");
+            modelAndView.addObject("errorMessage", "Not registered email or invalid password!");
             return modelAndView;
         }
 
         if (!bCryptPasswordEncoder.matches(requestParams.get("password"), user.getPassword())) {
             bindingResult.reject("email");
             bindingResult.reject("password");
-            redir.addFlashAttribute("errorMessage", "Not registered email or invalid password!");
+            modelAndView.addObject("errorMessage", "Not registered email or invalid password!");
             return modelAndView;
         }
 

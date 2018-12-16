@@ -25,7 +25,7 @@ public interface ProductService {
 
     ProductCommand findCommandById(Long l);
 
-    ProductCommand saveRecipeCommand(ProductCommand command);
+    ProductCommand saveProductCommand(ProductCommand command);
 
     void deleteById(Long idToDelete);
 

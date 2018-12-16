@@ -54,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductCommand saveRecipeCommand(ProductCommand command) {
+    public ProductCommand saveProductCommand(ProductCommand command) {
         Product detachedProduct = productCommandToProduct.convert(command);
 
         Product savedProduct = productRepository.save(detachedProduct);

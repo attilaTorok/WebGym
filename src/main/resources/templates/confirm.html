@@ -67,13 +67,14 @@
         <div class="help-block with-errors"></div>
       </div>
 
-      <button type="submit"
+      <button th:id="submitButton"
+              type="submit"
               class="btn btn-primary block full-width m-b">Save
       </button>
 
     </form>
 
-    <a class="btn btn-default" href="#" th:href="@{'/login'}" role="button">Login</a>
+    <a th:id="loginButton" class="btn btn-default" href="#" th:href="@{'/login'}" role="button">Login</a>
 
 
   </div>

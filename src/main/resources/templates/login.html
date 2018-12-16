@@ -33,6 +33,8 @@
         <form autocomplete="off" action="#" th:action="@{/login}" method="post" class="m-t" role="form"
               data-toggle="validator">
 
+            <div th:if="${errorMessage}" class="alert alert-danger"
+                 role="alert" th:text="${errorMessage}"></div>
 
             <div class="form-group input-group">
           <span class="input-group-addon">
@@ -54,11 +56,12 @@
                       aria-hidden="true"></span>
             </div>
 
-            <button type="submit"
+            <button th:id="loginButton"
+                    type="submit"
                     class="btn btn-primary block full-width m-b"
                     th:href="@{'/index'}">Login</button>
 
-            <a class="btn btn-primary block full-width m-b" href="#" th:href="@{'/register'}" role="button">Register</a>
+            <a th:id="registerButton" class="btn btn-primary block full-width m-b" href="#" th:href="@{'/register'}" role="button">Register</a>
 
         </form>
         <p class="m-t">
